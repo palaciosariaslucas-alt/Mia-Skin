@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mía Skin | Mi piel, mi esencia, mi momento</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mia-pink-light': '#FFF0F5',
+                        'mia-pink-soft': '#FDE2E4',
+                        'mia-pink-bubble': '#FFB7C5',
+                        'mia-pink-vibrant': '#FF69B4',
+                        'mia-pink-dark': '#C71585',
+                        'mia-pink-deep': '#831843',
+                        'mia-gold': '#F59E0B'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .pink-gradient {
+            background: linear-gradient(135deg, #FFB7C5 0%, #FF69B4 50%, #C71585 100%);
+        }
+        .pink-soft-gradient {
+            background: linear-gradient(135deg, #FFF0F5 0%, #FDE2E4 50%, #FFB7C5 100%);
+        }
+        .glass-pink {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 105, 180, 0.25);
+        }
+        /* Custom Pink Scrollbar */
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF0F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF69B4;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C71585;
+        }
+    </style>
+</head>
+<body class="bg-mia-pink-light font-sans text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-mia-pink-dark text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide flex justify-center items-center gap-2 shadow-sm">
+        <i class="fa-solid fa-sparkles text-yellow-300 animate-pulse"></i>
+        <p>¡Atención presencial y domicilios en <strong>Istmina, Chocó</strong> | Horario: 8:00 a.m. a 5:00 p.m.</p>
+    </div>
+
+    <!-- Sticky Header Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-mia-pink-bubble/40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full pink-gradient flex items-center justify-center text-white font-serif font-bold text-2xl shadow-md group-hover:scale-105 transition-transform">
+                        M
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold tracking-wider text-mia-pink-deep block leading-none">Mía Skin</span>
+                        <p class="text-[10px] tracking-widest text-mia-pink-dark uppercase font-bold mt-1">Mi piel, mi esencia, mi momento.</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#inicio" class="text-slate-700 hover:text-mia-pink-dark transition-colors">Inicio</a>
+                    <a href="#esencia" class="text-slate-700 hover:text-mia-pink-dark transition-colors">Nuestra Esencia</a>
+                    <a href="#productos" class="text-slate-700 hover:text-mia-pink-dark transition-colors">Línea Vive Beauty</a>
+                    <a href="#ubicacion" class="text-slate-700 hover:text-mia-pink-dark transition-colors">Ubicación</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="openCart()" class="relative p-2.5 text-mia-pink-dark hover:bg-mia-pink-soft transition-all rounded-full" aria-label="Ver Carrito">
+                        <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-mia-pink-vibrant text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
+                    </button>
+                    <a href="https://wa.me/573117687586?text=Hola%20M%C3%ADa%20Skin,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos." target="_blank" class="pink-gradient text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-md hover:opacity-95 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <p class="text-white m-0">Pedir por WhatsApp</p>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center gap-3 md:hidden">
+                    <button onclick="openCart()" class="relative p-2 text-mia-pink-dark">
+                        <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                        <span id="cart-count-mobile" class="absolute top-0 right-0 bg-mia-pink-vibrant text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="p-2 text-mia-pink-dark rounded-lg focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-mia-pink-bubble px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-medium border-b border-pink-50">Inicio</a>
+            <a href="#esencia" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-medium border-b border-pink-50">Nuestra Esencia</a>
+            <a href="#productos" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-medium border-b border-pink-50">Línea Vive Beauty</a>
+            <a href="#ubicacion" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-medium border-b border-pink-50">Ubicación y Horarios</a>
+            <a href="https://wa.me/573117686912" target="_blank" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-center flex items-center justify-center gap-2 shadow">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <p class="text-white m-0">Escribir por WhatsApp</p>
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Hero Section Rosado -->
+        <section id="inicio" class="relative py-12 lg:py-16 overflow-hidden pink-soft-gradient border-b border-mia-pink-bubble/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-mia-pink-vibrant/30 shadow-sm text-xs font-bold text-mia-pink-dark">
+                            <i class="fa-solid fa-heart text-mia-pink-vibrant"></i>
+                            <p class="m-0">Distribuidor Autorizado Vive Beauty</p>
+                        </div>
+                        
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-mia-pink-deep leading-tight">
+                            Mi piel, mi esencia,<br>
+                            <span class="italic font-normal text-mia-pink-vibrant">mi momento.</span>
+                        </h1>
+
+                        <p class="text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            Todo lo que tu piel necesita para sentirte especial. En Mía Skin, buscamos que las personas se sientan bien con el cuidado de su piel, con excelentes fragancias que te harán sentir irresistible.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#productos" class="w-full sm:w-auto pink-gradient text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-3">
+                                <p class="text-white m-0">Explorar Catálogo Rosado</p>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="#ubicacion" class="w-full sm:w-auto bg-white hover:bg-pink-50 text-mia-pink-dark border border-mia-pink-vibrant/40 px-8 py-4 rounded-full font-bold transition-all text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-location-dot text-mia-pink-vibrant"></i>
+                                <p class="m-0">Ver Punto en Istmina</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Right con la portada exacta de revista -->
+                    <div class="lg:col-span-6 relative flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-pink-100">
+                            <img src="Mama-mia.jpg">
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Esencia -->
+        <section id="esencia" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-mia-pink-vibrant font-bold tracking-widest text-xs uppercase">Cuidado & Bienestar</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-mia-pink-deep mt-1 mb-4">¿Por qué elegir Mía Skin?</h2>
+                <div class="w-20 h-1.5 pink-gradient mx-auto rounded-full mb-12"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-pink p-8 rounded-3xl text-center space-y-3 border-pink-200 shadow-sm">
+                        <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-mia-pink-vibrant text-2xl mx-auto">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-mia-pink-deep">Fragancias Cautivadoras</h3>
+                        <p class="text-slate-600 text-sm">Aromas frutales, florales y dulces diseñados para perdurar en tu piel todo el día.</p>
+                    </div>
+
+                    <div class="glass-pink p-8 rounded-3xl text-center space-y-3 border-pink-300 shadow-md transform -translate-y-1">
+                        <div class="w-14 h-14 pink-gradient text-white rounded-2xl flex items-center justify-center text-2xl mx-auto shadow">
+                            <i class="fa-solid fa-bottle-droplet"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-mia-pink-deep">Nutrición & Hidratación</h3>
+                        <p class="text-slate-600 text-sm">Formulaciones ricas en vitamina E, aloe vera, colágeno y aceites naturales para máxima suavidad.</p>
+                    </div>
+
+                    <div class="glass-pink p-8 rounded-3xl text-center space-y-3 border-pink-200 shadow-sm">
+                        <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-mia-pink-vibrant text-2xl mx-auto">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-mia-pink-deep">Atención Especializada</h3>
+                        <p class="text-slate-600 text-sm">Te acompañamos en Istmina a elegir el producto perfecto para tu tipo de piel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo de Productos Vive Beauty -->
+        <section id="productos" class="py-20 pink-soft-gradient">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-mia-pink-vibrant font-bold tracking-widest text-xs uppercase">Catálogo Completo</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-mia-pink-deep">Línea Corporal Vive Beauty</h2>
+                    <p class="text-slate-600 text-sm sm:text-base">Los productos corporales de la marca Vive Beauty que te aportarán múltiples beneficios para tu piel con fragancias que te encantarán.</p>
+                    <div class="w-24 h-1.5 pink-gradient mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Product Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                    
+                    <!-- 1. KIT COMPLETO GLOW -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Kit Especial</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$125.000</span>
+                            </div>
+            <!-- Contenedor del Kit Interactivo -->
+    <div class="kit-slider-container" style="max-width: 350px; margin: 0 auto 1.5rem auto;">
+        
+        <!-- Imagen única que ira cambiando -->
+        <div class="kit-img-container" style="width: 100%; height: 320px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+            <img id="imagenKit" src="Kit Tropical Dream.jpeg"Kit de Mía Skin" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- Nombre del kit actual que cambia dinámicamente -->
+        <p id="nombreKit" style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">Kit Tropical Dream</p>
+
+        <!-- Círculos (Bolitas) para cambiar de kit -->
+        <div class="slider-dots" style="display: flex; justify-content: center; gap: 12px; margin-top: 12px;">
+            <span onclick="cambiarKit(0)" class="dot" style="width: 18px; height: 18px; background-color: #ff7f00; border-radius: 50%; cursor: pointer; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;"></span>
+            <span onclick="cambiarKit(1)" class="dot" style="width: 18px; height: 18px; background-color: #ffd700; border-radius: 50%; cursor: pointer; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;"></span>
+            <span onclick="cambiarKit(2)" class="dot" style="width: 18px; height: 18px; background-color: #2ecc71; border-radius: 50%; cursor: pointer; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;"></span>
+            <span onclick="cambiarKit(3)" class="dot" style="width: 18px; height: 18px; background-color: #f869c8; border-radius: 50%; cursor: pointer; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;"></span>
+        </div>
+    </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Kit Completo Glow</h3>
+                            <span class="inline-block bg-pink-50 text-mia-pink-vibrant text-xs font-bold px-3 py-1 rounded-full">Todo esto viene en tu kit</span>
+                            <p class="text-sm font-semibold text-mia-pink-dark">Acabas de desbloquear tu Glow.</p>
+                            
+                            <div class="space-y-1 text-sm text-slate-600 border-t border-pink-100 pt-3">
+                                <p class="m-0">+ Gel de ducha</p>
+                                <p class="m-0">+ Crema Corporal 200gr</p>
+                                <p class="m-0">+ Body Splash</p>
+                                <p class="m-0">+ Mantequilla Corporal</p>
+                                <p class="m-0">+ Crema Corporal 60gr</p>
+                            </div>
+                            <p class="text-xs italic text-gray-500 bg-pink-50 p-2.5 rounded-xl">Tu experiencia merece verse. Compártenos en redes con un video con él.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(1)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. KIT COMPLETO GLOW -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Kit Especial</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$139.000</span>
+                            </div>
+        
+  <div style="max-width: 350px; margin: 0 auto 1.5rem auto;">
+        
+        <!-- Imagen que cambiará entre Euphoria y Coconut Vanilla -->
+        <div style="width: 100%; height: 320px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+            <img id="imagenEspecial" src="Kit Euphoria.jpeg" alt="Kit Especial Mía Skin" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- Nombre del kit actual -->
+        <p id="nombreEspecial" style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">Kit Euphoria</p>
+
+        <!-- Dos bolitas interactivas: Morado y Cafecito -->
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 12px;">
+            <!-- Bolita Morada para Euphoria -->
+            <span onclick="cambiarKitEspecial(0)" title="Kit Euphoria" style="width: 22px; height: 22px; background-color: #8b5cf6; border-radius: 50%; cursor: pointer; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;"></span>
+            
+            <!-- Bolita Cafecito para Coconut Vanilla -->
+            <span onclick="cambiarKitEspecial(1)" title="Kit Coconut Vanilla" style="width: 22px; height: 22px; background-color: #a16207; border-radius: 50%; cursor: pointer; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;"></span>
+        </div>
+    </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Kit Completo Glow</h3>
+                            <span class="inline-block bg-pink-50 text-mia-pink-vibrant text-xs font-bold px-3 py-1 rounded-full">Todo esto viene en tu kit</span>
+                            <p class="text-sm font-semibold text-mia-pink-dark">Acabas de desbloquear tu Glow.</p>
+                            
+                            <div class="space-y-1 text-sm text-slate-600 border-t border-pink-100 pt-3">
+                                <p class="m-0">+ Gel de ducha</p>
+                                <p class="m-0">+ Chispita de Luna</p>
+                                <p class="m-0">+ Exfoliante de Azúcar </p>
+                                <p class="m-0">+ Mantequilla Corporal</p>
+                                <p class="m-0">+ Crema Corporal 60gr</p>
+                            </div>
+                            <p class="text-xs italic text-gray-500 bg-pink-50 p-2.5 rounded-xl">Tu experiencia merece verse. Compártenos en redes con un video con él.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(2)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                     <!-- 3. KIT COMPLETO GLOW -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Kit Especial</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$123.000</span>
+                            </div>
+                <div class="Kit Soft Berry" style="text-align: center;">
+            <div class="kit-img-container" style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Kit Soft Berry.jpeg" alt="Kit Soft Berry" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">Kit Soft Berry</p>
+        </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Kit Completo Glow</h3>
+                            <span class="inline-block bg-pink-50 text-mia-pink-vibrant text-xs font-bold px-3 py-1 rounded-full">Todo esto viene en tu kit</span>
+                            <p class="text-sm font-semibold text-mia-pink-dark">Acabas de desbloquear tu Glow.</p>
+                            
+                            <div class="space-y-1 text-sm text-slate-600 border-t border-pink-100 pt-3">
+                                <p class="m-0">+ Gel de ducha</p>
+                                <p class="m-0">+ Crema Corporal 200gr</p>
+                                <p class="m-0">+ Chispita de Luna</p>
+                                <p class="m-0">+ Mantequilla Corporal</p>
+                                <p class="m-0">+ Crema Corporal 60gr</p>
+                            </div>
+                            <p class="text-xs italic text-gray-500 bg-pink-50 p-2.5 rounded-xl">Tu experiencia merece verse. Compártenos en redes con un video con él.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(3)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                     <!-- 4. KIT COMPLETO GLOW -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Kit Especial</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$127.000</span>
+                            </div>
+                <div class="Kit Boomberry" style="text-align: center;">
+            <div class="kit-img-container" style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Kit Boomberry.jpeg" alt="Kit Soft Berry" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">Kit Boomberry</p>
+        </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Kit Completo Glow</h3>
+                            <span class="inline-block bg-pink-50 text-mia-pink-vibrant text-xs font-bold px-3 py-1 rounded-full">Todo esto viene en tu kit</span>
+                            <p class="text-sm font-semibold text-mia-pink-dark">Acabas de desbloquear tu Glow.</p>
+                            
+                            <div class="space-y-1 text-sm text-slate-600 border-t border-pink-100 pt-3">
+                                <p class="m-0">+ Gel de ducha</p>
+                                <p class="m-0">+ Chispita de Luna</p>
+                                <p class="m-0">+ Body Splash </p>
+                                <p class="m-0">+ Mantequilla Corporal</p>
+                                <p class="m-0">+ Crema Corporal tamaño viajero</p>
+                            </div>
+                            <p class="text-xs italic text-gray-500 bg-pink-50 p-2.5 rounded-xl">Tu experiencia merece verse. Compártenos en redes con un video con él.</p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(4)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- 2. SHOWER GEL -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Gel de Ducha</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$45.000</span>
+                            </div>
+                            <!-- Contenedor de Imagen Interactiva -->
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <div style="width: 100%; height: 340px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.08); background-color: #fff;">
+            <img id="imagenShower" src="Shower-soft berry.jpeg" alt="Shower Gel Mía Skin" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.06) saturate(1.1); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- 6 Botones Interactivos con los colores especificados -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px;">
+            <!-- Soft Berry: Rosado más oscuro -->
+            <button type="button" onclick="cambiarShower(0)" style="background-color: #c71585; color: white; border: none; padding: 7px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8rem; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Soft Berry
+            </button>
+            <!-- Mango Pop: Amarillo -->
+            <button type="button" onclick="cambiarShower(1)" style="background-color: #eab308; color: white; border: none; padding: 7px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8rem; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Mango Pop
+            </button>
+            <!-- Roses: Rosado más claro -->
+            <button type="button" onclick="cambiarShower(2)" style="background-color: #f472b6; color: white; border: none; padding: 7px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8rem; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Roses
+            </button>
+            <!-- Tropical Dream: Anaranjado oscuro -->
+            <button type="button" onclick="cambiarShower(3)" style="background-color: #ea580c; color: white; border: none; padding: 7px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8rem; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Tropical Dream
+            </button>
+            <!-- Euphoria: Morado -->
+            <button type="button" onclick="cambiarShower(4)" style="background-color: #7c3aed; color: white; border: none; padding: 7px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8rem; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Euphoria
+            </button>
+            <!-- Coconut Vanilla: Café claro -->
+            <button type="button" onclick="cambiarShower(5)" style="background-color: #b45309; color: white; border: none; padding: 7px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8rem; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Coconut Vanilla
+            </button>
+        </div>
+    </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Shower Gel</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">Aromas: Coconut Vanilla, Euphoria, Soft Berry, Roses, Mango Pop, Tropical Dream</p>
+                            <p class="text-sm text-slate-600">Shower Gel con fórmula suave para piel limpia, fresca y olorosa.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3">
+                                <p class="text-xs font-bold text-mia-pink-dark m-0">Ingredientes destacados:</p>
+                                <p class="text-xs text-slate-600 m-0">Aloe Vera, Manzanilla, Macadamia, Cacao, Vitamina E y Colágeno.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(5)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                      <!-- 4. ACEITE CORPORAL -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Aceite Corporal</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$26.000</span>
+                            </div>
+                            <div class="Aceite Corporal" style="text-align: center;">
+            <div class="Aceite-Corporal-img" style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Aceite corporal.jpeg" alt="Aceite Corporal" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">3 Aromas Aceite</p>
+        </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Aceite Corporal Nutritivo</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">3 aromas disponibles: Almendra, Naranja, Coco</p>
+                            <p class="text-sm text-slate-600">Aceite corporal nutritivo que humecta y acondiciona la piel, aportando suavidad inmediata y luminosidad, con una mezcla poderosa de aceites naturales y vitamina E.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Humecta y suaviza la piel.<br>• Aporta brillo natural.<br>• Cuenta con propiedades antioxidante, antibacterianas y antiflamatorias.<br>• Brinda protección frente al sol.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Pieles secas y zonas que necesitan mayor nutrición.<br>• Personas que buscan brillo saludable en la piel.<br>• Masajes anticelulíticos y relajantes</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar una cantidad necesaria sobre piel limpia y seca o ligeramente húmeda, masajear con movimientos ciculares hasta su absorción. Se recomienda aplicar diariamente, especialmente despues del baño.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes:</p>
+                                    <p class="text-slate-600 m-0">Aceite de coco, macadamia, argán, vitamina E y filtro solar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(6)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. SUGAR SCRUB -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Exfoliante Azúcar</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$40.000</span>
+                            </div>
+                            <!-- Contenedor de Imagen Interactiva -->
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <div style="width: 100%; height: 240px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.08); background-color: #fff;">
+            <img id="imagenSugar" src="Sugar.jpeg" alt="Sugar Scrub Aromas" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.06) saturate(1.1); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- Botones de Aromas y Extensión del producto -->
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 12px;">
+            <button type="button" onclick="cambiarSugar(0)" style="background-color: #e82a78; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(232,42,120,0.3); transition: transform 0.2s;">
+                Aromas
+            </button>
+            <button type="button" onclick="cambiarSugar(1)" style="background-color: #f472b6; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(244,114,182,0.3); transition: transform 0.2s;">
+                Extensión del producto
+            </button>
+        </div>
+    </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Sugar Scrub</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">5 aromas disponibles + extensión de línea</p>
+                            <p class="text-sm text-slate-600">Exfoliante corporal de acción profunda a base de aceites y azúcar, que elimina células muertas y mejora la textura de la piel, dejando una sensación suave y sedosa desde el primer uso.</p>
+                             <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios principales:</p>
+                                    <p class="text-slate-600 m-0">• Elimina células muertas.<br>• Aporta luminosidad inmediata.<br>• Suaviza y mejora la textura.<br>• Nutre mientras exfolia.<br>• Deja la piel sedosa y renovada</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Suavizar zonas ásperas.<br>• Mejorar la textura de la piel.<br>• Rutinas corporales de renovación.<br>• Potenciar el aroma y duración de otros productos</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Humedece la piel, masajea con movimientos circulares en zonas como codos, rodillas y talones; enjuaga con agua, seca con suaves toques y finaliza con tu crema corporal o aceite favorito para potenciar la hidratación. Se recomienda usar 1 a 2 veces por semana.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & Aromas:</p>
+                                    <p class="text-slate-600 m-0">Manteca de karité, Vitamina E, Azúcar, Aceites nutritivos. Aromas: Mango Pop, Green Glow, Tropical Dream, Boomberry, Euphoria. Extensión: Roses, Coconut Vanilla, Soft Berry.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(7)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                  
+
+                    <!-- 4. Body splash -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Body splash</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$30.000</span>
+                            </div>
+            <!-- Contenedor de Imagen Interactiva -->
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <div style="width: 100%; height: 240px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.08); background-color: #fff;">
+            <img id="imagenBody" src="Body Splash.jpeg" alt="Body Splash Aromas" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.06) saturate(1.1); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- Botones de Aromas y Extensión del producto -->
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 12px;">
+            <button type="button" onclick="cambiarBodysplash(0)" style="background-color: #e82a78; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(232,42,120,0.3); transition: transform 0.2s;">
+                Aromas
+            </button>
+            <button type="button" onclick="cambiarBodysplash(1)" style="background-color: #f472b6; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(244,114,182,0.3); transition: transform 0.2s;">
+                Extensión del producto
+            </button>
+        </div>
+    </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Body Splash Fragancia</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 5 aromas + extensión de línea</p>
+                            <p class="text-sm text-slate-600">Splash con doble concentración de fragancias y mayor fijación, diseñado para envolver la piel con un aroma más intenso y envolvente, brindando una experiencia olfativa más marcada.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Fragancias intensas y de larga duración.<br>• Efecto refrescante inmediato.<br>• Experiencia sensorial.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Personas que buscan un aroma duradero pero ligero para el día a día.<br>• Quienes prefieren una alternativa más fresca frente a perfumes pesados.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplica directamente sobre la piel limpia y seca, idealmente luego de la humectación de la piel.Rocia a una distancia de 15 a 20 cm en zonas como cuello, muñecas, pecho o detrás de las orejas.Reaplica durante el dia si deseas intersificar el aroma.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & aromas:</p>
+                                    <p class="text-slate-600 m-0">Glicerina y aromas frescos como: Euphoria, Green Glow, Mango Pop, Tropical Dream, Boomberry, Roses, Soft berry, Coconut Vanilla.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(8)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- 5. CHISPITA DE LUNA -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Splash con Glitter</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$28.000</span>
+                            </div>
+                <!-- Contenedor de Imagen Interactiva -->
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <div style="width: 100%; height: 240px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.08); background-color: #fff;">
+            <img id="imagenChispita" src="Chispita de Luna.jpeg" alt="Chispita de Luna Aromas" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.06) saturate(1.1); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- Botones de Aromas y Extensión del producto -->
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 12px;">
+            <button type="button" onclick="cambiarChispitadeLuna(0)" style="background-color: #e82a78; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(232,42,120,0.3); transition: transform 0.2s;">
+                Aromas
+            </button>
+            <button type="button" onclick="cambiarChispitadeLuna(1)" style="background-color: #f472b6; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(244,114,182,0.3); transition: transform 0.2s;">
+                Extensión del producto
+            </button>
+        </div>
+    </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Chispita de Luna</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">5 aromas + Extensión de línea</p>
+                            <p class="text-sm text-slate-600">Splash corporal con glitter, que combina una fragancia envolvente y duradera con destellos brillantes y sutiles que perduran en tu piel, aporta un efecto glow y una sensación refrescante.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios e Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Aporta luminosidad a la piel con efecto glow.<br>• Perfuma la piel.<br>• Diseñado para aplicación sobre la ropa.<br>• Personas que buscan un producto que combine fragancia y luminosidad.<br> Personas que disfrutan de productos sensoriales</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Agita bien el envase antes de usar para distribuir uniformemente el glitter. Aplica sobre la piel limpia y seca, o sobre la ropa. Rocía a una distancia de 15 a 20 cm.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Aromas:</p>
+                                    <p class="text-slate-600 m-0">Green Glow, Mango Pop, Euphoria, Boomberry, Tropical Dream, Roses, Soft Berry, Coconut Vanilla.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(9)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                       <!-- Gel limpiador -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Gel Facial</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$28.000</span>
+                            </div>
+                   <div class="Gel Facial" style="text-align: center;">
+            <div class="Gel-Limpiador-img" style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Gel Limpiador Facial.jpeg" alt="Gel Limpiador" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">4 Aromas Gel Limpiador</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Gel Limpiador Facial</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 4 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">Limpia profundamente la piel eliminando impurezas, exceso de grasa, residuos de maquillaje y contaminación acumulada durante el dia, respetando la barrera natural de la piel.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Limpia profundamente sin resecar.<br>• Retira grasa y maquillaje ligero.<br>• Deja sensación fresca y ligera.<br>• Ayuda a mejorar la apariencia de los poros con uso constante.<br>• Mantiene la piel suave e hidratada.<br>• Contiene Ácido Salicilico en baja concentración, que limpia profundamente los poros y ayuda a mejorar su apariencia.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Rutinas básicas o completas.<br>• Todo tipo de piel (según presentación).<br>• Control de grasa y limpieza diaria.<br>• Clientes que buscan sensación fresca y ligera.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar 1-2 pumps sobre el rostro húmedo, masajear durante 20-40 segundos y enjuagar con agua tibia. tip: Insistir suavemente en la zona T (nariz y frente) sin frotar agresivamente.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & aromas:</p>
+                                    <p class="text-slate-600 m-0">Caléndula, Hamamelis, Ácido Salicilico. Aromas: Ácido Hialurónico, Niacinamida, Aloe Vera, Rosas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(10)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    
+
+                     <!-- Sérum Facial -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Sérum</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$40.000</span>
+                            </div>
+           <div class="Sérum" style="text-align: center;">
+            <div class="Sérum-Facial-img" style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Sérum facial.jpeg" alt="Sérum Facial" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">4 Aromas Sérum</p>
+        </div>
+
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Sérum Facial</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 4 referencias disponibles</p>
+                            <p class="text-sm text-slate-600">Sérum faciales de alta concentreción de activos, diseñados para penetrar rápidamente en la piel y tratar necesidades específicas como hidrtación, manchas, líneas de expresión, control de grasa o luminosidad. Su textura es ligera y de rápida absorción.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Atrae y retiene la humedad en la piel.<br>• Proporciona hidratación prolongada.<br>• Ayuda a mejorar la elasticidad.<br>• Suaviza la apariencia de lineas de expresión causadas por deshidratación.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Rutinas rápidas.<br>• Todo tipo de piel.<br>• Personas que usan maquillaje diario.<br>• Limpieza facial mañana y noche.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Tras la limpieza, aplica un par de gotas en el rostro. Distribuye con toques suaves hasta absorber. Úsalo en la rutina de dia y de noche.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & aromas:</p>
+                                    <p class="text-slate-600 m-0">Manzanilla. Aromas: Vitamina C, Liporetinol, Niacinamida, Ácido Hialurónico.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(11)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                     <!-- Espuma Facial -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Espuma</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$28.000</span>
+                            </div>
+         <div class="Espuma" style="text-align: center;">
+            <div class="Espuma-Facial-img" style="width: 100%; height: 280px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Espuma Facial.jpeg" alt="Espuma Facial" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">4 Aromas Espuma</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Espuma Facial</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 4 fórmulas disponibles</p>
+                            <p class="text-sm text-slate-600">Limpia profundamente, eliminando impurezas, sudor, células muertas y residuos del día a día, sin resecar la piel, regula el exceso de grasa, ayuda a minimizar los poros y mantiene el rostro suave, radiante y libre de brillo. Su acción seborreguladora y purificante equilibra la piel.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Limpieza profunda.<br>• Control del exceso de grasa.<br>• Minimiza la apariencia de poros.<br>• Acción purificante.<br>• No reseca la piel.<br>• Piel suave y fresca.<br>• Efecto matificante</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Personas con piel mixta a grasa que buscan controlar el brillo.<br>• Quienes desean una limpieza profunda sin resecar la piel.<br>• Pieles con tendencia a imperfecciones o poros visibles.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Humedece el rostro con agua. Aplica una pequeña cantidad de espuma en las manos. Masajea suavemente sobre el rostro con movimientos circulares. Enfócate en zonas con mayor grasa como frente, naríz y mentón. Enjuaga con abundante agua y seca suavemente.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Aromas:</p>
+                                    <p class="text-slate-600 m-0">Aloe Vera + Niacinamida, Ácido Hialurónico + Aloe Vera, Hamamelis, Rosas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(12)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                     <!-- Crema Corporal Faith -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Crema Corporal</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$28.000</span>
+                            </div>
+        <div class="Crema Faith" style="text-align: center;">
+            <div class="Crema-Faith-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Crema Faith.jpeg" alt="Crema Corporal Faith" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">4 Aromas Crema Faith</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Crema Corporal Faith</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 4 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">Hidrata profundamente y nutre la piel, aportándole suavidad, y elasticidad. Su fórmula está enriquecida con ingredientes que fortalecen la barrera cutánea, ayudando a mantener la piel sana, firme y visiblemente más tonificada. Con micro particulas de glitter que aportan un efecto brillante y luminoso a tu piel.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Hidratación profunda y prolongada.<br>• Nutrición intensiva.<br>• Suavidad inmediata.<br>• Mejora la elasticidad.<br>• Efecto glow natural.<br>• Piel más firme y tonificada.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Personas con piel seca o deshidratada que necesitan nutrición profunda.<br>• Quienes buscan una piel más firme, suave y luminosa.<br>• Pieles que han perdido elasticidad o presentan signos de flacidez.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplica sobre la piel limpia y seca, preferiblemente después del baño. Toma una cantidad suficiente de producto. Distribuye en todo el cuerpo o en zonas especificas como piernas, brazos y abdomen. Y masajea hasta que el producto absorba completamente.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & aromas:</p>
+                                    <p class="text-slate-600 m-0">Extracto de flor de manzanilla, Aloe, Aceite de ricino. Aromas: Golden Pearl, Lirio Blanco, Sueño Celestial, Secreto Dorado.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(13)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- 6. EXFOLIANTE GEL CORPORAL -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Exfoliante Gel</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$40.000</span>
+                            </div>
+         <div class="Exfoliante Gel" style="text-align: center;">
+            <div class="Exfoliante-Gel-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Exfoliante Corporal.jpeg" alt="Exfoliante Gel Corporal" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">6 Aromas Exfoliante</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Exfoliante Gel Corporal</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">6 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">Exfoliante corporal en gel, con partículas finas de semillas de macadamia y albaricoque que brindan una exfoliación delicada, ayudando a renovar la piel y dejándola más luminosa, suave y visiblemente saludable.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios & Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Elimina células muertas e impurezas.<br>• Renueva la textura de la piel.<br>• Aporta luminasidad y suavidad.<br>• Propiedades hidratantes y antioxidantes.<br>• Calma y ayuda a mantener la piel saludable.<br>• Pieles sensibles.<br>• Preparar la piel antes de la depilación.<br>• Rutinas de cuidado corporal completas.<br>• Personas que buscan una piel más suave y luminosa</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar en piel húmeda y limpia una cantidad suficiente y masajear con movimientos circulares en todo el cuerpo, luego enjuagar con agua. Se recomienda su uso 2 veces a la semana.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & Aromas:</p>
+                                    <p class="text-slate-600 m-0">Semillas de macadamia, albaricoque, aloe vera, extracto de manzanilla, colágeno y vitamina E. Aromas: Café, Fresa, Maracuyá, Sandía, Kiwi, Chocolate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(14)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    
+
+                    
+                    <!-- Splash Corporal Faith -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Splash Corporal</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$28.000</span>
+                            </div>
+          <div class="Splash Faith" style="text-align: center;">
+            <div class="Splash-Faith-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Splash Faith.jpeg" alt="Splash Corporal Faith" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">4 Aromas Splash Faith</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Splash Corporal Faith</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 4 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">Aporta los elementos necesarios para mantener la piel sana, suave, tonificada, con elasticidad y con el brillo característico. Proporciona hidratación profunda, nutrición cutánea con ingredientes como vitaminas y antioxidantes que fortalecen la barrera cutánea.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Hidratación ligera y refrescante.<br>• Nutrición con vitaminas y antioxidantes.<br>• Fortalece la barrera cutánea.<br>• Mejora la elasticidad.<br>• Efecto glow natural.<br>• Fragancia envolvente.<br>• Textura ligera.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Personas que buscan hidratación ligera + fragancia en un solo producto.<br>• Quienes desean una piel super luminosa.<br>• Personas que quieren complementar su crema corporal con un toque perfumado y revitalizante.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplica sobre la piel limpia y seca, Rocía a una distancia de 15 a 20 cm. Enfócate en zonas como cuello, brazos y pecho. Deja secar naturalmente para conservar los destellos.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & aromas:</p>
+                                    <p class="text-slate-600 m-0">Glicerina, Aceite de ricino. Aromas: Golden Pearl, Lirio Blanco, Sueño Celestial, Secreto Dorado.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(15)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                  <!-- 7. CREMA CORPORAL HUMECTANTE -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Crema Corporal</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$25.000-18.000</span>
+                            </div>
+
+       <!-- Contenedor de Imagen Interactiva -->
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <div style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.08); background-color: #fff;">
+            <img id="imagenCremacorporal" src="Crema corporal.jpeg" alt="Crema corporal Aromas" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.06) saturate(1.1); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- Botones de Aromas y Extensión del producto -->
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 12px;">
+            <button type="button" onclick="cambiarCremacorporal(0)" style="background-color: #e82a78; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(232,42,120,0.3); transition: transform 0.2s;">
+                Aromas
+            </button>
+            <button type="button" onclick="cambiarCremacorporal(1)" style="background-color: #f472b6; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(244,114,182,0.3); transition: transform 0.2s;">
+                Extensión del producto
+            </button>
+        </div>
+    </div>
+    <!-- Selector de tamaño para la Crema Corporal -->
+<div style="margin: 15px 0; text-align: center;">
+    <p style="font-weight: bold; color: #555; margin-bottom: 8px;">Selecciona el tamaño:</p>
+    
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <!-- Botón Grande -->
+        <button type="button" id="btnCremaGrande" onclick="seleccionarTamanioCrema('grande', 25000, 'Crema Corporal Grande (200gr)')" 
+            style="background-color: #e82a78; color: white; border: 2px solid #e82a78; padding: 8px 14px; border-radius: 12px; font-weight: bold; cursor: pointer;">
+            Grande - $25.000
+        </button>
+
+        <!-- Botón Pequeño -->
+        <button type="button" id="btnCremaPequena" onclick="seleccionarTamanioCrema('pequena', 18000, 'Crema Corporal Pequeña (60gr)')" 
+            style="background-color: white; color: #e82a78; border: 2px solid #e82a78; padding: 8px 14px; border-radius: 12px; font-weight: bold; cursor: pointer;">
+            Pequeña - $18.000
+        </button>
+    </div>
+</div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Crema Corporal Humectante</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">5 aromas + Extensión de línea</p>
+                            <p class="text-sm text-slate-600">Emulsión corporal enriquecida con aloe vera y colágeno, que proporciona hidratación por más de 6 horas, y una sensación de frescura y confort.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios e ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Textura ligera y de fácil absorción.<br>• Hidrata la piel y conserva una sensación de humedad.<br>• Calma y refresca la piel.<br>• Formato prático: disponible en tamaño mini para llevar a cualquier parte.<br>• Una rutina diaria sin complicaciones.<br>• Reaplicar durante el dia.<br>• Aplicar después de la exposición al sol.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar sobre piel limpia, preferiblemente después de la ducha para una mejor absorción. Tomar una cantidad y distribuirlo en manos, brazos, piernas o cuerpo entero. Masajear suavemente con movimientos circulares hasta que se absorba.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & Aromas:</p>
+                                    <p class="text-slate-600 m-0">Aloe vera, colágeno y vitamina E. Aromas: Euphoria, Green Glow, Mango Pop, Tropical Dream, Boomberry, Roses, Soft Berry, Coconut Vanilla.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(16)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- 8. HELADO CORPORAL -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Helado Corporal</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$30.000</span>
+                            </div>
+         <div class="Helado Corporal" style="text-align: center;">
+            <div class="Helado-Corporal-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Helado Corporal.jpeg" alt="Helado Corporal" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">4 Aromas De Helado Corporal</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Helado Corporal</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">4 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">Mantequillas corporales con mayor concentración de manteca de karité y con textura tipo helado que humectan y embellecen tu piel con deliciosas fragancias tropicales.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios e Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Humecta profundamente.<br>• Mejora la elasticidad de la piel.<br>• Brinda sensación de piel aterciopelada.<br>• Perfuma tu piel con fragancias tropicales.<br>• Personas con piel seca o deshidratada que buscan nutrición intesa.<br>• Quienes desean mejorar la apariencia de celulitis y estrías.<br>• Pieles con manchas, cicatrices o tono desigual.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar una buena cantidad sobre la piel limpia y masajear con movimientos circulareshasta su absorción, enfócate en zonas especificas como piernas, glúteos y abdomen. Úsala diariamente, preferiblemente después del baño para potenciar su absorción y resultados.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & Aromas:</p>
+                                    <p class="text-slate-600 m-0">Aloe vera, glicerina, aceite de ricino, agua de rosas. Aromas: Cacao tropical, Coco Loco, Sandía Muss, Piña Colada.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(17)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- 9. MANTEQUILLA CORPORAL -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Mantequilla Corporal</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$30.000</span>
+                            </div>
+
+        <!-- Contenedor de Imagen Interactiva -->
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <div style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.08); background-color: #fff;">
+            <img id="imagenMantequilla" src="Mantequilla Corporal.jpeg" alt="Mantequilla Corporal Mía Skin" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.06) saturate(1.1); transition: opacity 0.3s ease;">
+        </div>
+
+        <!-- 3 Botones con diferentes tonalidades de rosado -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px;">
+            <!-- Botón Aromas: Fucsia / Rosado oscuro -->
+            <button type="button" onclick="cambiarMantequilla(0)" style="background-color: #e82a78; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(232,42,120,0.3); transition: transform 0.2s;">
+                Aromas
+            </button>
+            <!-- Botón Extensión de línea: Rosado medio -->
+            <button type="button" onclick="cambiarMantequilla(1)" style="background-color: #f472b6; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(244,114,182,0.3); transition: transform 0.2s;">
+                Extensión de línea
+            </button>
+            <!-- Botón Edición especial: Rosado pastel / suave -->
+            <button type="button" onclick="cambiarMantequilla(2)" style="background-color: #fda4af; color: #4a1525; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 5px rgba(253,164,175,0.3); transition: transform 0.2s;">
+                Edición especial
+            </button>
+        </div>
+    </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Mantequilla Corporal</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">6 aromas + Extensión + Edición especial</p>
+                            <p class="text-sm text-slate-600">Fórmula de textura ultracremosa de rápida absorción, enriquecida con manteca de karité y diseñada para humectar profundamente la piel, mejorar la sensación de sequedad y mejorar su sensación al tacto.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios e ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Nutre intensamente sin sensación pesada.<br>• Protege la barrera cutánea.<br>• Humecta a pronfudidad.<br>• Calma y conforta la piel reseca.<br>• Aporta un brillo sutil en la piel.<br>• Acondicionar la piel.<br>• Potenciar el aroma de tu fragancia.<br>• Hidratar intensamente sin sensación grasosa.<br>• Uso diario.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar diariamente una cantidad suficiente sobre la piel limpia masajeando hasta su absorción.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & Aromas:</p>
+                                    <p class="text-slate-600 m-0">Aloe vera, glicerina, manzanilla, vitamina E. Aromas: Boomberry, Mango Pop, Euphoria, Tropical Dream, Green Glow, Soft Berry, Coconut Vanilla, Roses y Explosión Frutal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(18)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tónico de Rosas -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Tónico Facial</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$15.000</span>
+                            </div>
+         <div class="Tónico de Rosas" style="text-align: center;">
+            <div class="Tónico-de-Rosas-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Tónico de Rosas.jpeg" alt="Tónico de Rosas" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;">2 Aromas De Tónico</p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Tónico Facial De Rosas</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 2 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">Tónico facial refrescante que ayuda a equilibrar el pH, hidratar y suavizar la piel, aportando frescura inmediata y mejorando su elasticidad.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Hidrata profundamente.<br>• Restaura el equilibrio natural del pH.<br>• Suaviza y mejora la elasticidad.<br>• Propiedades antioxidantes.<br>• Reduce irritación y sensación de tirantez.<br>• No deja sensación grasa ni pegajosa.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Todo tipo de piel.<br>• Piel sensible o con tendencia a irritarse.<br>• Rutinas de dia y noche.<br>• Preparar la piel antes de la crema hidratante.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplica directamente sobre el rostro limpio en la mañana y/o en la noche, distribuyendo suavemente hasta su absorción. Aplicar después del Gel Facial Limpiador y antes del Sérum.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes & aromas:</p>
+                                    <p class="text-slate-600 m-0">Manzanilla, Vitamina E, Elastina, Colágeno. Aromas: Rosas, Aloe Vera.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(19)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Perfume Capilar -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Perfume</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$52.000</span>
+                            </div>
+                            <div class="Perfume-Ca" style="text-align: center;">
+            <div class="Perfume-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Perfume-Capilar.jpeg" alt="Perfume Capilar" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 6px;">Perfume Capilar</p>
+        </div>
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Perfume Capilar</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold"> 2 aromas disponibles</p>
+                            <p class="text-sm text-slate-600">El primer perfume de Colombia sin alcohol - sin agua. Creado para cuidar el cabello mientras lo hace oler delicioso con un aroma que dura hasta 48 horas.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Aroma de largo duración (hasta 48 horas).<br>• Sin alcohol y sin agua. Fórmula innovadora que no reseca ni maltrata la fibra capilar.<br>• Cuida mientras perfuma.<br>• Efecto suavizante.<br>• Ideal para todo tipo de cabello.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Personas que quieren un cabello perfumado por horas sin dañarlo.<br>• Quienes evitan productos con alcohol que resequen el cabello.<br>• Uso diario oficina, salidas, citas o después del gimnasio.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplica sobre el cabello seco o ligeramente húmedo. Rocia a una distacia de 15 a 20 cm. Distribuye en medios y puntos (evita la raiz si tu cuero cabelludo es graso). Deja secar naturalmente, no es necesario enjuagar.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Aromas:</p>
+                                    <p class="text-slate-600 m-0">Summer Edition y Autumn Editon.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(20)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Agua Micelar -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Agua</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$26.000</span>
+                            </div>
+        <div class="Agua Micelar" style="text-align: center;">
+            <div class="Agua-Micelar-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Agua Micelar.jpeg" alt="Agua Micelar" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;"></p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Agua Micelar</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">1 disponible</p>
+                            <p class="text-sm text-slate-600">Nuestra agua micelar contiene micelas; pequeñas esferas limpiadoras que actúan como un imán atrapando grasa, impurezas y residuos de maquillaje. Perfecta para la limpieza diaria del rostro.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Limpieza profunda y delicada.<br>• Elimina maquillaje e impurezas.<br>• Hidrata sin sensación pegajosa.<br>• Calma y refresca la piel.<br>• Apto para todo tipo de piel.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Rutinas rápidas.<br>• Todo tipo de piel.<br>• Personas que usan maquillaje diario.<br>• Limpieza facial mañana y noche.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Aplicar una cantidad suficiente en un pad de algodón y pasar suavemente sobre el rostro con movimientos circulares. Repetir hasta que el pad salga limpio.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes:</p>
+                                    <p class="text-slate-600 m-0">Ácido Hialurónico, Manzanilla, Vitamina E.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(21)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                     <!-- Desmaquillador Bifásico -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-pink-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-100 text-mia-pink-dark font-bold text-[11px] px-3 py-1 rounded-full uppercase">Desmaquillador</span>
+                                <span class="font-bold text-lg text-mia-pink-deep">$38.000</span>
+                            </div>
+        <div class="Desmaquillador Bifásico" style="text-align: center;">
+            <div class="Desmaquillador-Bifásico-img" style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; border: 3px solid #fbcfe8; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fff;">
+                <img src="Desmaquillador Bifásico.jpeg" alt="Desmaquillador Bifásico" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.15) brightness(1.02); transition: transform 0.3s ease;">
+            </div>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #a80d4f; margin-top: 10px;"></p>
+        </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-mia-pink-deep">Desmaquillador Bifásico</h3>
+                            <p class="text-xs text-mia-pink-vibrant font-bold">1 disponible</p>
+                            <p class="text-sm text-slate-600">Su fórmula combina dos fases, una acuosa y otra oleosa que al unirse eliminan facílmente todo tipo de maquillaje sin irritar la piel enriqueciendo con péptidos y aminoácidos que nutren y fortalecen las cejas y pestañas ayudando a mantenerlas más saludables, suaves y resistentes.</p>
+                            
+                            <div class="border-t border-pink-100 pt-3 space-y-2 text-xs">
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Beneficios:</p>
+                                    <p class="text-slate-600 m-0">• Remoción efectiva del maquillaje.<br>• Fórmula bifásica inteligente.<br>• Hidratación y suavidad.<br>• Suave con la piel.<br>• Nutre pestañas y cejas.<br>• No deja residuos pesados</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ideal para:</p>
+                                    <p class="text-slate-600 m-0">• Personas que usan maquillaje de larga duración o a prueba de agua.<br>• Pieles sensibles que necesitan una limpieza efectiva pero suave.<br>• Quienes desean cuidar y fortalecer pestañas y cejas.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Modo de uso:</p>
+                                    <p class="text-slate-600 m-0">Agita bien el envase para mezclar ambas fases. Aplica el producto en un algodón o pad desmaquillante. Coloca suavemente sobre ojos, labios o rostro durante unos segundos. Desliza sin frotar para retirar el maquillaje. Repite si es necesario.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-mia-pink-dark m-0">Ingredientes:</p>
+                                    <p class="text-slate-600 m-0">Ácido Hialurónico, Glicerina, Aloe Vera.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(22)" class="w-full pink-gradient text-white py-3 rounded-full font-bold text-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="text-white m-0">Agregar al Carrito</p>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </section>
+
+        <!-- Ubicación & Contacto en Istmina -->
+        <section id="ubicacion" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-mia-pink-vibrant font-bold tracking-widest text-xs uppercase">Visítanos</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-mia-pink-deep">Nuestra Ubicación en Istmina</h2>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            En Mía Skin queremos atenderte personalmente para guiarte en el cuidado de tu piel. Ven y conoce todas nuestras fragancias de Vive Beauty.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-pink-50 border border-pink-200">
+                                <div class="w-10 h-10 rounded-full pink-gradient text-white flex items-center justify-center text-lg flex-shrink-0 shadow">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-mia-pink-deep m-0">Ubicación Principal</p>
+                                    <p class="text-sm text-slate-700 m-0">Istmina, Chocó</p>
+                                    <p class="text-xs text-mia-pink-vibrant font-semibold mt-1 m-0">Barrio San Francisco — Puente de los amantes, las palmeras.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-pink-50 border border-pink-200">
+                                <div class="w-10 h-10 rounded-full bg-mia-pink-vibrant text-white flex items-center justify-center text-lg flex-shrink-0 shadow">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-mia-pink-deep m-0">Horario de Atención</p>
+                                    <p class="text-sm text-slate-700 m-0">Lunes a Sábado</p>
+                                    <p class="text-xs text-mia-pink-dark font-bold mt-1 m-0">8:00 a.m. - 5:00 p.m. (Jornada Continua)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Card Point -->
+                    <div class="lg:col-span-6">
+                        <div class="pink-gradient rounded-3xl p-8 text-white shadow-xl relative overflow-hidden space-y-6">
+                            <div class="relative z-10">
+                                <span class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Punto Mía Skin</span>
+                                <h3 class="font-serif text-3xl font-bold mt-4">¿Tienes dudas o deseas hacer un pedido instantáneo?</h3>
+                                <p class="text-pink-100 text-sm mt-2">
+                                    Escríbenos directamente a nuestro WhatsApp oficial para enviarte fotos, disponibilidad de aromas y coordinar la entrega en Istmina.
+                                </p>
+                            </div>
+
+                            <div class="relative z-10 pt-4">
+                                <a href="https://wa.me/573117687586?text=Hola%20M%C3%ADa%20Skin,%20deseo%20visitar%20el%20local%20o%20hacer%20un%20pedido." target="_blank" class="w-full bg-white text-mia-pink-deep py-4 rounded-full font-bold text-center block shadow-lg hover:bg-pink-50 transition-colors">
+                                    <i class="fa-brands fa-whatsapp text-lg mr-2 text-green-500"></i>
+                                    Contactar Asesoría Mía Skin
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeCart()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 pink-gradient text-white flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                        <h3 class="font-serif font-bold text-xl text-white m-0">Carrito Mía Skin</h3>
+                    </div>
+                    <button onclick="closeCart()" class="text-white hover:text-pink-200 text-2xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="flex-grow overflow-y-auto p-6 space-y-4" id="cart-items">
+                    <div id="empty-cart-msg" class="text-center py-16 text-gray-400 space-y-3">
+                        <i class="fa-solid fa-basket-shopping text-5xl text-mia-pink-vibrant"></i>
+                        <p class="text-sm font-medium">Tu carrito está vacío</p>
+                        <p class="text-xs text-gray-400">¡Explora nuestra línea de Vive Beauty!</p>
+                    </div>
+                </div>
+
+                <div class="p-6 border-t border-pink-100 bg-pink-50 space-y-4">
+                    <div class="flex justify-between items-center text-sm font-bold text-mia-pink-deep">
+                        <p class="m-0">Total Estimado:</p>
+                        <p id="cart-total" class="font-bold text-xl text-mia-pink-vibrant m-0">$0 COP</p>
+                    </div>
+                    <p class="text-[11px] text-gray-500 text-center">Se redirigirá tu pedido completo con dirección en Istmina a WhatsApp.</p>
+                    <button onclick="checkoutWhatsApp()" class="w-full bg-green-500 text-white py-4 rounded-full font-bold text-sm shadow-md hover:bg-green-600 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <p class="text-white m-0">Enviar Pedido por WhatsApp</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/573117687586?text=Hola%20M%C3%ADa%20Skin!" target="_blank" class="fixed bottom-6 right-6 z-30 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer Rosado Elegante -->
+    <footer class="bg-mia-pink-deep text-white border-t border-pink-400/30 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center justify-center sm:justify-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-white text-mia-pink-deep font-serif font-bold text-lg flex items-center justify-center">
+                            M
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-wider">Mía Skin</span>
+                    </div>
+                    <p class="text-xs text-pink-200">Mi piel, mi esencia, mi momento.</p>
+                    <p class="text-xs text-pink-100 leading-relaxed">
+                        En Mía Skin, buscamos que las personas se sientan bien con el cuidado de su piel, con excelentes fragancias que te harán sentir irresistible.
+                    </p>
+                </div>
+
+                <div class="space-y-2 text-xs text-pink-100">
+                    <h4 class="font-serif font-bold text-base text-white mb-3">Ubicación & Contacto</h4>
+                    <p class="m-0">Istmina, Chocó</p>
+                    <p class="m-0">Barrio San Francisco (Puente de los amantes, las palmeras)</p>
+                    <p class="m-0 font-bold text-white pt-2">Horario de Atención:</p>
+                    <p class="m-0">8:00 a.m. - 5:00 p.m.</p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-base text-white">Marca Vive Beauty</h4>
+                    <p class="text-xs text-pink-100">
+                        Los productos corporales de la marca Vive Beauty que te aportarán múltiples beneficios para tu piel con fragancias que te encantarán.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-pink-400/20 text-center text-xs text-pink-200">
+                <p>&copy; 2026 Mía Skin — Todos los derechos reservados. Istmina, Chocó.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Interactive Script -->
+    <script>
+
+        
+    // Creamos una lista o arreglo con la información de cada kit
+    const kitsData = [
+        {
+            nombre: "Kit Tropical Dream",
+            imagen: "Kit Tropical Dream.jpeg", // Naranja
+            colorBolita: "Anaranjado"
+        },
+        {
+            nombre: "Kit Mango Pop",
+            imagen: "Combo 1.jpeg", // Amarillo
+            colorBolita: "Amarillo"
+        },
+         {
+            nombre: "Kit Green Glow",
+            imagen: "Kit Green Glow.jpeg", // Verde
+            colorBolita: "Verde"
+        },
+        {
+            nombre: "Kit Roses",
+            imagen: "Kit Roses.jpeg",  // Rosado
+            colorBolita: "Rosado"
+        },
+    ];
+
+    function cambiarKit(indice) {
+        // Obtenemos los elementos de la imagen y del texto por su ID
+        const imgElement = document.getElementById('imagenKit');
+        const textElement = document.getElementById('nombreKit');
+
+        // Cambiamos la fuente de la imagen y el texto según el índice de la bolita tocada
+        imgElement.src = kitsData[indice].imagen;
+        textElement.innerText = kitsData[indice].nombre;
+
+        // Aquí creamos el console.log que pediste para registrar el cambio en la consola
+        console.log("Kit seleccionado en Mía Skin: " + kitsData[indice].nombre + " (Bolita color: " + kitsData[indice].colorBolita + ")");
+    }
+        const productsList = [
+            { id: 1, name: "Kit Completo Glow", price: 125000 },
+            { id: 2, name: "Kit Completo Glow", price: 139000 },
+            { id: 3, name: "Kit Completo Glow", price: 123000 },
+            { id: 4, name: "Kit Completo Glow", price: 127000 },
+            { id: 5, name: "Shower Gel", price: 45000 },
+            { id: 6, name: "Aceite Corporal Nutritivo", price: 26000 }, 
+            { id: 7, name: "Sugar Scrub", price: 40000 },
+            { id: 8, name: "Body Splash Fragancia", price: 30000 },
+            { id: 9, name: "Chispita de Luna", price: 28000 },
+            { id: 10, name: "Gel Limpiador Facial", price: 28000 },
+            { id: 11, name: "Sérum Facial", price: 40000 },
+            { id: 12, name: "Espuma Facial", price: 28000 },
+            { id: 13, name: "Crema Corporal Faith", price: 28000 },
+            { id: 14, name: "Exfoliante Gel Corporal", price: 40000 },
+            { id: 15, name: "Splash Corporal Faith", price: 28000 },
+            { id: 16, name: "Crema Corporal Humectante", price: 25000 },
+            { id: 17, name: "Helado Corporal", price: 30000 },
+            { id: 18, name: "Mantequilla Corporal", price: 30000 },
+            { id: 19, name: "Tónico Facial De Rosas", price: 15000 },
+            { id: 20, name: "Perfume Capilar", price: 52000 },
+            { id: 21, name: "Agua Micelar", price: 26000 },
+            { id: 22, name: "Desmaquillador Bifásico", price: 38000 }
+        ];
+
+        // Arreglo exclusivo para Euphoria y Coconut Vanilla
+    const kitsEspecialesData = [
+        {
+            nombre: "Kit Euphoria",
+            imagen: "Kit Euphoria.jpeg",
+            colorBolita: "Morado"
+        },
+        {
+            nombre: "Kit Coconut Vanilla",
+            imagen: "Kit Coconut Vanilla.jpeg",
+            colorBolita: "Cafecito"
+        }
+    ];
+
+    function cambiarKitEspecial(indice) {
+        const imgElement = document.getElementById('imagenEspecial');
+        const textElement = document.getElementById('nombreEspecial');
+
+        // Cambiamos la imagen y el texto
+        imgElement.src = kitsEspecialesData[indice].imagen;
+        textElement.innerText = kitsEspecialesData[indice].nombre;
+
+        // Console.log para registrar qué kit especial se seleccionó y el color de su bolita
+        console.log("Kit especial seleccionado: " + kitsEspecialesData[indice].nombre + " | Bolita color: " + kitsEspecialesData[indice].colorBolita);
+    }
+
+       
+    // Datos y archivos de imágenes para cada Shower Gel
+    const showerData = [
+        {
+            nombre: "Soft Berry",
+            imagen: "Shower-soft berry.jpeg",
+            colorBoton: "Rosado más oscuro (#c71585)"
+        },
+        {
+            nombre: "Mango Pop",
+            imagen: "Shower-Mango pop.jpeg",
+            colorBoton: "Amarillo (#eab308)"
+        },
+        {
+            nombre: "Roses",
+            imagen: "Shower-Roses.jpeg",
+            colorBoton: "Rosado más claro (#f472b6)"
+        },
+        {
+            nombre: "Tropical Dream",
+            imagen: "Shower-TropicalDream.jpeg",
+            colorBoton: "Anaranjado oscuro (#ea580c)"
+        },
+        {
+            nombre: "Euphoria",
+            imagen: "Shower-Euphoria.jpeg",
+            colorBoton: "Morado (#7c3aed)"
+        },
+        {
+            nombre: "Coconut Vanilla",
+            imagen: "Shower-CoconutVanilla.jpeg",
+            colorBoton: "Café claro (#b45309)"
+        }
+    ];
+
+    function cambiarShower(indice) {
+        const imgShower = document.getElementById('imagenShower');
+        const tituloShower = document.getElementById('tituloShower');
+
+        // Cambiamos la imagen y el título del tag superior
+        imgShower.src = showerData[indice].imagen;
+        tituloShower.innerText = showerData[indice].nombre;
+
+        // Console.log para registrar la selección del usuario
+        console.log("Shower Gel seleccionado: " + showerData[indice].nombre + " (Botón: " + showerData[indice].colorBoton + ")");
+    }
+
+        // Datos de las vistas del Sugar Scrub
+    const sugarData = [
+        {
+            boton: "Aromas",
+            etiqueta: "5 aromas disponibles",
+            imagen: "Sugar.jpeg",
+            aromasTexto: "Aromas: Mango Pop, Green Glow, Tropical Dream, Boomberry, Euphoria."
+        },
+        {
+            boton: "Extensión del producto",
+            etiqueta: "Extensión de línea (3 aromas)",
+            imagen: "Extensión de sugar.jpeg",
+            aromasTexto: "Extensión de línea: Roses, Coconut Vanilla, Soft Berry."
+        }
+    ];
+
+    function cambiarSugar(indice) {
+        const imgSugar = document.getElementById('imagenSugar');
+        const tagSugar = document.getElementById('tagSugar');
+        const listaAromas = document.getElementById('listaAromasSugar');
+
+        // Actualizamos la imagen, la etiqueta superior y la lista de aromas
+        imgSugar.src = sugarData[indice].imagen;
+        tagSugar.innerText = sugarData[indice].etiqueta;
+        listaAromas.innerHTML = "<strong>" + sugarData[indice].aromasTexto.split(":")[0] + ":</strong>" + sugarData[indice].aromasTexto.split(":")[1];
+
+        // Registramos la acción en la consola
+        console.log("Sugar Scrub cambiado a vista: " + sugarData[indice].boton + " | Mostrando: " + sugarData[indice].aromasTexto);
+    }
+    const BodyData = [
+        {
+            boton: "Aromas",
+            etiqueta: "5 aromas disponibles",
+            imagen: "Body Splash.jpeg",
+            aromasTexto: "Aromas: Euphoria, Green Glow, Mango Pop, Tropical Dream, Boomberry."
+        },
+        {
+            boton: "Extensión del producto",
+            etiqueta: "Extensión de línea (3 aromas)",
+            imagen: "Body extensión.jpeg",
+            aromasTexto: "Extensión de línea: Roses, Soft Berry, Coconut Vanilla."
+        }
+    ];
+
+    function cambiarBodysplash(indice) {
+        const imgBody = document.getElementById('imagenBody');
+        const tagBody = document.getElementById('tagBody');
+        const listaAromas = document.getElementById('listaAromasBody');
+
+        // Actualizamos la imagen, la etiqueta superior y la lista de aromas
+        imgBody.src = BodyData[indice].imagen;
+        tagBody.innerText = BodyData[indice].etiqueta;
+        listaAromas.innerHTML = "<strong>" + BodyData[indice].aromasTexto.split(":")[0] + ":</strong>" + BodyData[indice].aromasTexto.split(":")[1];
+
+        // Registramos la acción en la consola
+        console.log("Body Splash cambiado a vista: " + BodyData[indice].boton + " | Mostrando: " + BodyData[indice].aromasTexto);
+    }
+     const ChispitaData = [
+        {
+            boton: "Aromas",
+            etiqueta: "5 aromas disponibles",
+            imagen: "Chispita de Luna.jpeg",
+            aromasTexto: "Aromas: Mango Pop, Euphoria, Boomberry, Green Glow, Tropical Dream."
+        },
+        {
+            boton: "Extensión del producto",
+            etiqueta: "Extensión de línea (3 aromas)",
+            imagen: "Chispita extensión.jpeg",
+            aromasTexto: "Extensión de línea: Roses, Soft Berry, Coconut Vanilla."
+        }
+    ];
+
+    function cambiarChispitadeLuna(indice) {
+        const imgChispita = document.getElementById('imagenChispita');
+        const tagChispita = document.getElementById('tagChispita');
+        const listaAromas = document.getElementById('listaAromasChispita');
+
+        // Actualizamos la imagen, la etiqueta superior y la lista de aromas
+        imgChispita.src = ChispitaData[indice].imagen;
+        tagChispita.innerText = ChispitaData[indice].etiqueta;
+        listaAromas.innerHTML = "<strong>" + ChispitaData[indice].aromasTexto.split(":")[0] + ":</strong>" + ChispitaData[indice].aromasTexto.split(":")[1];
+
+        // Registramos la acción en la consola
+        console.log("Chispita de Luna cambiado a vista: " + ChispitaData[indice].boton + " | Mostrando: " + ChispitaData[indice].aromasTexto);
+    }
+    const CremacorporalData = [
+        {
+            boton: "Aromas",
+            etiqueta: "5 aromas disponibles",
+            imagen: "Crema corporal.jpeg",
+            aromasTexto: "Aromas: Euphoria, Green Glow, Mango Pop, Tropical Dream, Boomberry."
+        },
+        {
+            boton: "Extensión del producto",
+            etiqueta: "Extensión de línea (3 aromas)",
+            imagen: "Crema corporal extensión.jpeg",
+            aromasTexto: "Extensión de línea: Roses, Soft Berry, Coconut Vanilla."
+        }
+    ];
+
+    function cambiarCremacorporal(indice) {
+        const imgCremacorporal = document.getElementById('imagenCremacorporal');
+        const tagCremacorporal = document.getElementById('tagCremacorporal');
+        const listaAromas = document.getElementById('listaAromasCremacorporal');
+
+        // Actualizamos la imagen, la etiqueta superior y la lista de aromas
+        imgCremacorporal.src = CremacorporalData[indice].imagen;
+        tagCremacorporal.innerText = CremacorporalData[indice].etiqueta;
+        listaAromas.innerHTML = "<strong>" + CremacorporalData[indice].aromasTexto.split(":")[0] + ":</strong>" + CremacorporalData[indice].aromasTexto.split(":")[1];
+
+        // Registramos la acción en la consola
+        console.log("Crema corporal cambiado a vista: " + CremacorporalData[indice].boton + " | Mostrando: " + CremacorporalData[indice].aromasTexto);
+    }
+    const mantequillaData = [
+        {
+            boton: "Aromas",
+            etiqueta: "5 aromas disponibles",
+            imagen: "Mantequilla Corporal.jpeg",
+            textoInfo: "Aromas normales: Boomberry, Mango Pop, Tropical Dream, Green Glow, Euphoria."
+        },
+        {
+            boton: "Extensión de línea",
+            etiqueta: "Extensión de línea (3 aromas)",
+            imagen: "Matequilla Extensión.jpeg",
+            textoInfo: "Extensión de línea: Soft Berry, Coconut Vanilla, Roses."
+        },
+        {
+            boton: "Edición especial",
+            etiqueta: "Edición Especial",
+            imagen: "Mantequilla Edición especial.jpeg",
+            textoInfo: "Edición Especial: Explosión Frutal (con Glicerina, Vitamina E y Extracto de manzanilla)."
+        }
+    ];
+
+    function cambiarMantequilla(indice) {
+        const imgMantequilla = document.getElementById('imagenMantequilla');
+        const tagMantequilla = document.getElementById('tagMantequilla');
+        const listaMantequilla = document.getElementById('listaMantequilla');
+
+        // Actualizamos la imagen, la etiqueta superior y el texto descriptivo
+        imgMantequilla.src = mantequillaData[indice].imagen;
+        tagMantequilla.innerText = mantequillaData[indice].etiqueta;
+        listaMantequilla.innerHTML = "<strong>" + mantequillaData[indice].textoInfo.split(":")[0] + ":</strong>" + mantequillaData[indice].textoInfo.split(":")[1];
+
+        // Registramos la acción exacta en la consola como lo pediste
+        console.log("Mantequilla Corporal cambiada a vista: " + mantequillaData[indice].boton + " | Mostrando: " + mantequillaData[indice].textoInfo);
+    }
+  // Función para seleccionar el tamaño de la crema e inyectarlo en tu lista de productos automáticamente
+    function seleccionarTamanioCrema(tipo, precio, nombre) {
+        const btnGrande = document.getElementById('btnCremaGrande');
+        const btnPequena = document.getElementById('btnCremaPequena');
+
+        if (tipo === 'grande') {
+            btnGrande.style.backgroundColor = "#e82a78";
+            btnGrande.style.color = "white";
+            btnPequena.style.backgroundColor = "white";
+            btnPequena.style.color = "#e82a78";
+        } else {
+            btnPequena.style.backgroundColor = "#e82a78";
+            btnPequena.style.color = "white";
+            btnGrande.style.backgroundColor = "white";
+            btnGrande.style.color = "#e82a78";
+        }
+
+        // ¡ESTE ES EL TRUCO! Actualizamos el ID 16 en tu productsList existente al instante
+        const cremaEnLista = productsList.find(p => p.id === 16);
+        if (cremaEnLista) {
+            cremaEnLista.name = nombre;
+            cremaEnLista.price = precio;
+        }
+
+        // Console.log para verificar que la consola sí lo registró
+        console.log("Tamaño seleccionado y sincronizado: " + nombre + " | Precio: $" + precio);
+    }
+    // Función para mostrar el aviso de "¡Pedido aprobado!" en pantalla
+    function mostrarAvisoPedidoAprobado() {
+        // Creamos un elemento div flotante temporalmente
+        const aviso = document.createElement('div');
+        aviso.innerHTML = `
+            <div style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: #e82a78; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; text-align: center; animation: fadeInOut 3s ease;">
+                🎉 ¡Pedido aprobado con éxito! Redirigiendo a WhatsApp...
+            </div>
+        `;
+        document.body.appendChild(aviso);
+
+        // Hacemos que desaparezca solo después de 3 segundos
+        setTimeout(() => {
+            aviso.remove();
+        }, 3000);
+    }
+    
+
+        let cart = [];
+
+        function openCart() {
+            document.getElementById('cart-drawer').classList.remove('hidden');
+        }
+
+        function closeCart() {
+            document.getElementById('cart-drawer').classList.add('hidden');
+        }
+
+        function addToCart(id) {
+            const product = productsList.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            openCart();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = count;
+            document.getElementById('cart-count-mobile').innerText = count;
+
+            const container = document.getElementById('cart-items');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+
+            if (cart.length === 0) {
+                container.innerHTML = '';
+                container.appendChild(emptyMsg);
+                document.getElementById('cart-total').innerText = '$0 COP';
+                return;
+            }
+
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between p-3 bg-pink-50 rounded-2xl border border-pink-200";
+                row.innerHTML = `
+                    <div>
+                        <p class="font-bold text-xs text-mia-pink-deep m-0">${item.name}</p>
+                        <p class="text-[11px] text-gray-500 m-0">$${item.price.toLocaleString('es-CO')} x ${item.quantity}</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="font-bold text-xs text-mia-pink-vibrant">$${subtotal.toLocaleString('es-CO')}</span>
+                        <button onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-600 text-xs">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+
+            document.getElementById('cart-total').innerText = `$${total.toLocaleString('es-CO')} COP`;
+        }
+
+       function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío.');
+                return;
+            }
+
+            // <-- AQUÍ LLAMAMOS EL AVISO EN PANTALLA QUE ACABAMOS DE CREAR -->
+            mostrarAvisoPedidoAprobado();
+
+            let text = "¡Hola *Mía Skin*! Deseo realizar el siguiente pedido para Istmina:\n\n";
+            let total = 0;
+
+            cart.forEach((item, idx) => {
+                const sub = item.price * item.quantity;
+                total += sub;
+                text += `${idx + 1}. *${item.name} (x${item.quantity})* = $${sub.toLocaleString('es-CO')}\n`;
+            });
+
+            text += `\n*Total estimado:* $${total.toLocaleString('es-CO')} COP\n`;
+            text += `*Ubicación:* Istmina, Chocó (Barrio San Francisco)\n\n¿Tienen disponibilidad de aromas para coordinar?`;
+
+            // Damos un pequeño respiro de 1.5 segundos para que alcancen a leer el aviso antes de abrir WhatsApp
+            setTimeout(() => {
+                window.open(`https://wa.me/573117687586?text=${encodeURIComponent(text)}`, '_blank');
+            }, 1500);
+        }
+        
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
