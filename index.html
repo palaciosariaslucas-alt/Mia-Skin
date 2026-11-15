@@ -1830,34 +1830,39 @@
 
             document.getElementById('cart-total').innerText = `$${total.toLocaleString('es-CO')} COP`;
         }
+     function checkoutWhatsApp() {
+    if (cart.length === 0) {
+        alert('Tu carrito está vacío.');
+        return;
+    }
 
-       function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert('Tu carrito está vacío.');
-                return;
-            }
+    // 1. Mostramos el aviso visual en pantalla si lo tienes creado
+    if (typeof mostrarAvisoPedidoAprobado === 'function') {
+        mostrarAvisoPedidoAprobado();
+    }
 
-            // <-- AQUÍ LLAMAMOS EL AVISO EN PANTALLA QUE ACABAMOS DE CREAR -->
-            mostrarAvisoPedidoAprobado();
+    // 2. Construimos el mensaje de texto para WhatsApp
+    let text = "¡Hola *Mía Skin*! Deseo realizar el siguiente pedido para Istmina:\n\n";
+    let total = 0;
 
-            let text = "¡Hola *Mía Skin*! Deseo realizar el siguiente pedido para Istmina:\n\n";
-            let total = 0;
+    cart.forEach((item, idx) => {
+        const sub = item.price * item.quantity;
+        total += sub;
+        text += `${idx + 1}. *${item.name} (x${item.quantity})* = $${sub.toLocaleString('es-CO')}\n`;
+    });
 
-            cart.forEach((item, idx) => {
-                const sub = item.price * item.quantity;
-                total += sub;
-                text += `${idx + 1}. *${item.name} (x${item.quantity})* = $${sub.toLocaleString('es-CO')}\n`;
-            });
+    text += `\n*Total estimado:* $${total.toLocaleString('es-CO')} COP\n`;
+    text += `*Ubicación:* Istmina, Chocó (Barrio San Francisco)\n\n¿Tienen disponibilidad de aromas para coordinar?`;
 
-            text += `\n*Total estimado:* $${total.toLocaleString('es-CO')} COP\n`;
-            text += `*Ubicación:* Istmina, Chocó (Barrio San Francisco)\n\n¿Tienen disponibilidad de aromas para coordinar?`;
+    // 3. Generamos el enlace oficial de WhatsApp
+    let urlWhatsApp = `https://wa.me/573117687586?text=${encodeURIComponent(text)}`;
 
-            // Damos un pequeño respiro de 1.5 segundos para que alcancen a leer el aviso antes de abrir WhatsApp
-            setTimeout(() => {
-                window.open(`https://wa.me/573117687586?text=${encodeURIComponent(text)}`, '_blank');
-            }, 1500);
-        }
-        
+    // 4. Redirigimos de inmediato (usamos location.href para evitar que el navegador lo bloquee)
+    setTimeout(() => {
+        window.location.href = urlWhatsApp;
+    }, 1000);
+}
+      
 
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
